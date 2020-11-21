@@ -1,0 +1,548 @@
+	html,
+	body {
+	    height: 100%;
+	    scroll-behavior: smooth;
+	}
+	
+	body {
+	    margin: 0px;
+	    padding: 0px;
+	    background: #181818;
+	    font-family: 'Didact Gothic', sans-serif;
+	    font-size: 12pt;
+	    font-weight: 200;
+	    color: #FFF;
+	}
+	
+	#user_form {
+	    width: fit-content;
+	    margin-left: auto;
+	    margin-right: auto;
+	    position: relative;
+	    color: black;
+	    padding: 20px;
+	    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+	}
+	
+	#explain {
+	    color: black;
+	    margin-left: 10%;
+	}
+	
+	#log_btn {
+	    background-color: rgba(148, 40, 37, 1);
+	    color: #FFFFFF;
+	    font-size: 20px;
+	    padding: 5px;
+	    border: none;
+	    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	    border: 1px solid rgba(148, 40, 37, 1);
+	    transition-duration: 0.4s;
+	    border-radius: 5px;
+	    cursor: pointer;
+	}
+	
+	#log_btn:hover {
+	    background-color: white;
+	    color: black;
+	    border: 1px solid rgba(148, 40, 37, 1);
+	    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+	}
+	
+	.textInput {
+	    font-size: 20px;
+	}
+	
+	h1,
+	h2,
+	h3 {
+	    margin: 0;
+	    padding: 0;
+	}
+	
+	p,
+	ol,
+	ul {
+	    margin-top: 0;
+	}
+	
+	ol,
+	ul {
+	    padding: 0;
+	    list-style: none;
+	}
+	
+	p {
+	    line-height: 180%;
+	}
+	
+	strong {}
+	
+	a {
+	    color: #ee0000;
+	}
+	
+	a:hover {
+	    text-decoration: none;
+	}
+	
+	.container {
+	    overflow: hidden;
+	    margin: 0em auto;
+	    width: 1200px;
+	}
+	/*********************************************************************************/
+	/* Image Style                                                                   */
+	/*********************************************************************************/
+	
+	.image {
+	    display: inline-block;
+	}
+	
+	.image img {
+	    display: block;
+	    width: 100%;
+	}
+	
+	.image-full {
+	    display: block;
+	    width: 100%;
+	    margin: 0 0 2em 0;
+	}
+	
+	.image-left {
+	    float: left;
+	    margin: 0 2em 2em 0;
+	}
+	
+	.image-centered {
+	    display: block;
+	    margin: 0 0 2em 0;
+	}
+	
+	.image-centered img {
+	    margin: 0 auto;
+	    width: auto;
+	}
+	/*********************************************************************************/
+	/* List Styles                                                                   */
+	/*********************************************************************************/
+	
+	ul.style1 {}
+	
+	ul.actions {}
+	
+	ul.actions li {
+	    display: inline-block;
+	    padding: 0em 0.50em;
+	}
+	/*********************************************************************************/
+	/* Social Icon Styles                                                            */
+	/*********************************************************************************/
+	
+	ul.contact {
+	    margin: 0;
+	    padding: 2em 0em 0em 0em;
+	    list-style: none;
+	}
+	
+	ul.contact li {
+	    display: inline-block;
+	    padding: 0em 0.30em;
+	    font-size: 1em;
+	}
+	
+	ul.contact li span {
+	    display: none;
+	    margin: 0;
+	    padding: 0;
+	}
+	
+	ul.contact li a {
+	    color: #FFF;
+	}
+	
+	ul.contact li a:before {
+	    display: inline-block;
+	    background: #3f3f3f;
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    border-radius: 20px;
+	    text-align: center;
+	    color: #FFFFFF;
+	}
+	
+	ul.contact li a.icon-twitter:before {
+	    background: #2DAAE4;
+	}
+	
+	ul.contact li a.icon-facebook:before {
+	    background: #39599F;
+	}
+	
+	ul.contact li a.icon-dribbble:before {
+	    background: #C4376B;
+	}
+	
+	ul.contact li a.icon-tumblr:before {
+	    background: #31516A;
+	}
+	
+	ul.contact li a.icon-rss:before {
+	    background: #F2600B;
+	}
+	/*********************************************************************************/
+	/* Button Style                                                                  */
+	/*********************************************************************************/
+	
+	body::-webkit-scrollbar {
+	    width: 12px;
+	    /* width of the entire scrollbar */
+	}
+	
+	body::-webkit-scrollbar-track {
+	    background: white;
+	    /* color of the tracking area */
+	}
+	
+	body::-webkit-scrollbar-thumb {
+	    background-color: black;
+	    /* color of the scroll thumb */
+	    border-radius: 20px;
+	    /* roundness of the scroll thumb */
+	    border: 3px solid white;
+	    /* creates padding around scroll thumb */
+	}
+	
+	.button {
+	    display: inline-block;
+	    padding: 1em 2em 1em 2em;
+	    letter-spacing: 0.10em;
+	    margin-top: 2em;
+	    padding: 1.40em 3em;
+	    background: white;
+	    border-radius: 6px;
+	    text-decoration: none;
+	    font-weight: 700;
+	    font-size: 1em;
+	    color: #3f0900;
+	}
+	
+	.button-alt {
+	    padding: 1em 2em;
+	    border-color: rgba(0, 0, 0, .8);
+	}
+	/*********************************************************************************/
+	/* 4-column                                                                      */
+	/*********************************************************************************/
+	
+	.box1,
+	.box2,
+	.box3,
+	.box4 {
+	    width: 235px;
+	}
+	
+	.box1,
+	.box2,
+	.box3 {
+	    float: left;
+	    margin-right: 20px;
+	}
+	
+	.box4 {
+	    float: right;
+	}
+	/*********************************************************************************/
+	/* 3-column                                                                      */
+	/*********************************************************************************/
+	
+	.boxA,
+	/* .boxB, */
+	
+	.boxC {
+	    width: 384px;
+	}
+	
+	.boxB {
+	    width: 50%;
+	}
+	
+	.boxA,
+	.boxB {
+	    float: left;
+	    margin-right: 20px;
+	    color: black;
+	}
+	
+	.boxC {
+	    float: right;
+	}
+	
+	#motive {
+	    margin-top: 30px;
+	    display: block;
+	    padding: 20px;
+	    width: auto;
+	    background-size: cover;
+	    background-position: center center;
+	    background-image: url();
+	    background-color: rgba(255, 255, 255, 0.6);
+	    background-blend-mode: lighten;
+	}
+	
+	#wdwd {
+	    width: 100%;
+	    height: auto;
+	}
+	/*********************************************************************************/
+	/* 2-column                                                                      */
+	/*********************************************************************************/
+	
+	.tbox1,
+	.tbox2 {
+	    width: 575px;
+	}
+	
+	.tbox1 {
+	    float: left;
+	}
+	
+	.tbox2 {
+	    float: right;
+	}
+	/*********************************************************************************/
+	/* Heading Titles                                                                */
+	/*********************************************************************************/
+	
+	.title {
+	    margin-bottom: 3em;
+	}
+	
+	.title h2 {
+	    font-size: 2.7em;
+	}
+	
+	.title .byline {
+	    font-size: 1.3em;
+	    color: rgba(255, 255, 255, 0.60);
+	}
+	/*********************************************************************************/
+	/* Header                                                                        */
+	/*********************************************************************************/
+	
+	#wrapper {
+	    position: relative;
+	    padding: 5em 0em 7em 0em;
+	    background: #FFF;
+	}
+	/*********************************************************************************/
+	/* Header                                                                        */
+	/*********************************************************************************/
+	
+	#header-wrapper {
+	    position: relative;
+	    padding: 1em 0em 0em 0em;
+	    background: #111111 url(images/home0.jpg) no-repeat center;
+	    background-size: cover;
+	    background-position: center center;
+	    background-attachment: fixed;
+	}
+	
+	#header {
+	    position: relative;
+	    padding: 1em 0em 5em 0em;
+	}
+	/*********************************************************************************/
+	/* Logo                                                                          */
+	/*********************************************************************************/
+	
+	#logo {
+	    position: absolute;
+	    top: 1em;
+	    left: 0;
+	}
+	
+	#logo h1 {
+	    font-size: 2.6em;
+	    color: #79C255;
+	}
+	
+	#logo a {
+	    text-decoration: none;
+	    color: rgba(255, 255, 255, 1);
+	}
+	/*********************************************************************************/
+	/* Menu                                                                          */
+	/*********************************************************************************/
+	
+	#menu {
+	    position: absolute;
+	    top: 1em;
+	    right: 0;
+	}
+	
+	#menu ul {
+	    display: inline-block;
+	}
+	
+	#menu li {
+	    display: block;
+	    float: left;
+	    text-align: center;
+	}
+	
+	#menu li a,
+	#menu li span {
+	    padding: 1em 1.5em;
+	    letter-spacing: 1px;
+	    text-decoration: none;
+	    text-transform: uppercase;
+	    font-size: 0.8em;
+	    color: black;
+	    /* color: rgba(255, 255, 255, 0.80); */
+	}
+	
+	#menu li:hover a,
+	#menu li.active a,
+	#menu li.active span {
+	    background: white;
+	    border-radius: 6px;
+	    color: rgba(255, 255, 255, 1);
+	    color: #3f0900;
+	}
+	
+	#menu .active a {
+	    background: white;
+	    border-radius: 6px;
+	    color: rgba(255, 255, 255, 1);
+	    color: #3f0900;
+	}
+	
+	#menu .icon {}
+	/*********************************************************************************/
+	/* Banner                                                                        */
+	/*********************************************************************************/
+	
+	#banner-wrapper {
+	    padding: 5em 0em;
+	    background: rgba(0, 0, 0, .8);
+	}
+	
+	#banner {
+	    text-align: center;
+	}
+	
+	#banner .title h2 {
+	    font-size: 4em;
+	}
+	
+	#banner .title .byline {
+	    font-size: 2em;
+	}
+	
+	#banner .button {
+	    margin-top: 2em;
+	    padding: 1.40em 3em;
+	    border-radius: 6px;
+	    font-weight: 700;
+	    font-size: 1em;
+	}
+	
+	.banner {
+	    margin-bottom: 5em;
+	}
+	/*********************************************************************************/
+	/* Page                                                                          */
+	/*********************************************************************************/
+	
+	#page {}
+	/*********************************************************************************/
+	/* Content                                                                       */
+	/*********************************************************************************/
+	
+	#content {}
+	/*********************************************************************************/
+	/* Sidebar                                                                       */
+	/*********************************************************************************/
+	
+	#sidebar {}
+	/*********************************************************************************/
+	/* Footer                                                                        */
+	/*********************************************************************************/
+	
+	#footer {}
+	/*********************************************************************************/
+	/* Copyright                                                                     */
+	/*********************************************************************************/
+	
+	#copyright {
+	    overflow: hidden;
+	    padding: 5em 0em;
+	    border-top: 1px solid rgba(0, 0, 0, 0.08);
+	}
+	
+	#copyright p {
+	    text-align: center;
+	    font-size: 1em;
+	    color: rgba(255, 255, 255, 0.3);
+	}
+	
+	#copyright a {
+	    text-decoration: none;
+	    color: rgba(255, 255, 255, 0.6);
+	}
+	/*********************************************************************************/
+	/* Welcome                                                                       */
+	/*********************************************************************************/
+	
+	#welcome {
+	    position: relative;
+	    padding: 7em 0em 7em 0em;
+	    background: rgba(148, 40, 37, 1);
+	    background-size: cover;
+	    text-align: center;
+	}
+	
+	#welcome .container {
+	    width: 1000px;
+	    padding: 0px 100px;
+	    color: rgba(255, 255, 255, 0.8);
+	}
+	
+	#welcome a {
+	    color: rgba(255, 255, 255, 1);
+	}
+	
+	#welcome .button {
+	    background: #FFF;
+	    color: #3f0900;
+	}
+	/*********************************************************************************/
+	/* Extra                                                                         */
+	/*********************************************************************************/
+	
+	#three-column {
+	    text-align: center;
+	    color: rgba(0, 0, 0, 0.6);
+	    width: auto;
+	    padding-left: 55px;
+	}
+	
+	#three-column .fa {
+	    display: block;
+	    padding: 1em 0em;
+	    color: rgba(0, 0, 0, 1);
+	    font-size: 2em;
+	}
+	
+	#three-column .title h2 {
+	    font-weight: bold;
+	    color: rgba(0, 0, 0, 0.8);
+	}
+	
+	#three-column .title .byline {
+	    text-align: center;
+	    color: rgba(0, 0, 0, .5);
+	}

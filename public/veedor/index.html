@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : FirstBase 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20140404
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Veedor</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+
+
+
+<!-- https://lh5.googleusercontent.com/xvtEN5naQwn1ai6PIUKWDvzJbMRf_NjegqNHdWyWbN2mMOM0XTsGBoZqyTak-J51XONiYrxO=w16383 -->
+
+
+
+
+<body>
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="menu">
+                <ul>
+                    <li><a accesskey="7" title="" onclick="document.forms[0].submit()" style="cursor: pointer;">Salir</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="banner-wrapper">
+            <div id="banner" class="container">
+                <div class="title">
+                    <h2>BIENVENID@ AL PORTAL DE VEEDORES</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form name="log_out" action="/logout?_method=DELETE" method="POST" style="display:none">
+        <input type="submit" value="Salir" style="margin-top:10px">
+    </form>
+    <div id="wrapper">
+        <div id="three-column" class="container">
+            <h2 style="color: black;text-transform: uppercase">EL ESTADO DE LA RECOLECTA EN TU CONJUNTO ES: <span id="state"></span>.</h2><br><br>
+            <button id="statebtn" class="btn" type="button" onclick="changeS()">INICIAR NUEVA DONACIÓN</button>
+            <button id="statebtn0" class="btn" type="button" onclick="changeS0()">YA SE COMPLETÓ LA RECOLECTA</button>
+        </div>
+
+    </div>
+    <div id="copyright" class="container">
+        <p>&copy; 2020 Dona desde casa 🤍 | Todos los derechos reservados.</p>
+    </div>
+</body>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<script type="text/javascript">
+    var loggedUser;
+    async function startup() {
+        const response = await fetch(`/veedor/data`);
+        const data = await response.json();
+        loggedUser = data[0];
+        document.getElementById("state").innerHTML = getState(loggedUser.idestado);
+        if (loggedUser.idestado == 0) {
+            document.getElementById("statebtn0").style.display = "block";
+        }
+        if (loggedUser.idestado == 3 || loggedUser.idestado == 4) {
+            document.getElementById("statebtn").style.display = "block";
+        }
+    }
+
+    function getState(state) {
+        if (state == 0) {
+            return "Incompleta";
+        }
+        if (state == 1) {
+            return "Completa";
+        }
+        if (state == 2) {
+            return "Recogida";
+        }
+        if (state == 3) {
+            return "Entregada";
+        }
+        if (state == 4) {
+            return "No Iniciada";
+        }
+    }
+
+    function changeS0() {
+        fetch(`/veedor/updatestate/${loggedUser.iddonaciones}/1`);
+        location.reload();
+    }
+
+    function changeS() {
+        fetch(`/veedor/updatestate/${loggedUser.iddonaciones}/0`);
+        location.reload();
+    }
+    startup();
+</script>
+
+</html>
