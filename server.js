@@ -21,7 +21,6 @@ server.use('/abus', express.static('./public/abus'));
 server.use('/howto', express.static('./public/howto'));
 server.use('/loc', express.static('./public/loc'));
 server.use('/tes', express.static('./public/tes'));
-server.use('/faq', express.static('./public/faq'));
 
 
 server.use(flash());
